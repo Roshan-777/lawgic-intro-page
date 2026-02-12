@@ -28,10 +28,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg font-[var(--font-heading)]">
+            <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg font-[var(--font-heading)]">
               L
             </div>
             <span className="text-xl font-bold text-foreground font-[var(--font-heading)]">
@@ -42,7 +42,7 @@ const Index = () => {
             href="https://lawgicbot.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-lg font-semibold text-sm hover:brightness-110 transition-all animate-pulse-glow"
+            className="group flex items-center gap-2 bg-card text-card-foreground px-5 py-2.5 rounded-full font-semibold text-sm hover:shadow-lg transition-all"
           >
             Try Now
             <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
@@ -55,23 +55,19 @@ const Index = () => {
         <div className="relative min-h-[90vh] flex items-center">
           {/* Background Image */}
           <div className="absolute inset-0">
-            <img
-              src={heroBg}
-              alt=""
-              className="w-full h-full object-cover opacity-40"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
+            <img src={heroBg} alt="" className="w-full h-full object-cover opacity-20" />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/30 to-background" />
           </div>
 
           <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 text-center">
             <div className="animate-fade-up">
-              <div className="inline-flex items-center gap-2 bg-muted/60 backdrop-blur-sm px-4 py-2 rounded-full text-sm text-muted-foreground mb-8 border border-border">
-                <Sparkles size={14} className="text-primary" />
+              <div className="inline-flex items-center gap-2 bg-card/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm text-foreground/80 mb-8 border border-foreground/10">
+                <Sparkles size={14} className="text-foreground" />
                 AI-Powered Legal Assistant
               </div>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 animate-fade-up-delay-1 font-[var(--font-heading)]">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 animate-fade-up-delay-1 font-[var(--font-heading)] text-foreground">
               No Suit, No Tie,
               <br />
               <span className="text-gradient">Just AI Legal Guy</span>
@@ -86,7 +82,7 @@ const Index = () => {
                 href="https://lawgicbot.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold text-lg hover:brightness-110 transition-all glow-primary"
+                className="group flex items-center gap-3 bg-card text-card-foreground px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl transition-all"
               >
                 <MessageSquare size={20} />
                 Start Chatting
@@ -94,7 +90,7 @@ const Index = () => {
               </a>
               <a
                 href="#features"
-                className="flex items-center gap-2 border border-border text-foreground px-8 py-4 rounded-xl font-semibold text-lg hover:bg-muted/50 transition-all"
+                className="flex items-center gap-2 border border-foreground/20 text-foreground px-8 py-4 rounded-xl font-semibold text-lg hover:bg-foreground/10 transition-all"
               >
                 Learn More
               </a>
@@ -107,7 +103,7 @@ const Index = () => {
       <section id="features" className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] text-foreground mb-4">
               Why <span className="text-gradient">LawGic.AI</span>?
             </h2>
             <p className="text-muted-foreground text-lg max-w-xl mx-auto">
@@ -116,18 +112,18 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, i) => (
+            {features.map((feature) => (
               <div
                 key={feature.title}
-                className="group bg-card border border-border rounded-2xl p-6 hover:border-primary/40 hover:glow-accent transition-all duration-300"
+                className="group bg-card rounded-2xl p-6 hover:shadow-xl transition-all duration-300 border border-[hsl(var(--card-border))]"
               >
-                <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <feature.icon size={22} className="text-primary" />
                 </div>
                 <h3 className="text-lg font-bold font-[var(--font-heading)] text-card-foreground mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-card-foreground/60 leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -138,16 +134,15 @@ const Index = () => {
 
       {/* CTA Section */}
       <section className="py-24 px-6">
-        <div className="max-w-3xl mx-auto text-center bg-card border border-border rounded-3xl p-12 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
+        <div className="max-w-3xl mx-auto text-center bg-card rounded-3xl p-12 relative overflow-hidden shadow-2xl border border-[hsl(var(--card-border))]">
           <div className="relative z-10">
-            <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center text-primary-foreground mx-auto mb-6 animate-float">
-              <Bot size={30} />
+            <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-primary-foreground mx-auto mb-6 animate-float text-2xl font-bold font-[var(--font-heading)]">
+              L
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] text-card-foreground mb-4">
               Ready to Talk Law?
             </h2>
-            <p className="text-muted-foreground text-lg mb-8 max-w-lg mx-auto">
+            <p className="text-card-foreground/60 text-lg mb-8 max-w-lg mx-auto">
               Get instant, AI-powered legal guidance — no jargon, no fees, no hassle.
             </p>
             <a
@@ -168,7 +163,7 @@ const Index = () => {
       <footer className="border-t border-border py-8 px-6">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-md bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm font-[var(--font-heading)]">
+            <div className="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm font-[var(--font-heading)]">
               L
             </div>
             <span className="font-semibold font-[var(--font-heading)] text-foreground">
