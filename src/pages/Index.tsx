@@ -15,7 +15,7 @@ const features = [
   {
     icon: Clock,
     title: "24/7 Availability",
-    description: "Get instant legal insights anytime — no appointments, no waiting rooms.",
+    description: "Get instant legal insights anytime, no appointments, no waiting rooms.",
   },
   {
     icon: Zap,
@@ -78,7 +78,7 @@ const Index = () => {
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-up-delay-2">
-              Meet LawGic.AI — your intelligent legal companion that simplifies complex legal questions into clear, actionable answers. Instantly.
+              Meet LawGic.AI, your intelligent legal companion that simplifies complex legal questions into clear, actionable answers. Instantly.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up-delay-3">
@@ -148,7 +148,7 @@ const Index = () => {
               Ready to Talk Law?
             </h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-lg mx-auto">
-              Get instant, AI-powered legal guidance — no jargon, no fees, no hassle.
+              Get instant, AI-powered legal guidance, no jargon, no fees, no hassle.
             </p>
             <a
               href="https://lawgicbot.vercel.app"
